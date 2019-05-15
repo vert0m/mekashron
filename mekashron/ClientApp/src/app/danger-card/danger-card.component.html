@@ -1,0 +1,10 @@
+<div class="card border-danger mb-3" style="max-width: 20rem;">
+  <div class="card-header bg-transparent border-danger">Failure!</div>
+  <div class="card-body text-danger">
+    <h5 class="card-title">Error code: {{model.ResultCode}}</h5>
+    <h5 class="card-title">Reason: {{model.ResultMessage}}</h5>
+  </div>
+  <div class="card-footer bg-transparent border-danger">
+    <button type="button" class="btn btn-outline-danger" (click)="goBack()">Back</button>
+  </div>
+</div>

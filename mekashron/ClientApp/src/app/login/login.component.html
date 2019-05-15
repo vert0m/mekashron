@@ -1,0 +1,25 @@
+<div class="container wrapper">
+  <div class="row">
+    <div class="offset-md-3 col-md-6 form-wrapper" *ngIf="!entityModel">
+      <form>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="username" placeholder="Username" name="username" [(ngModel)]="model.username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="model.password">
+        </div>
+        <div class="button-wrapper">
+          <button type="submit" class="btn btn-dark" (click)="login()">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- cards -->
+    <div class="offset-md-3 col-md-6 cards-wrapper">
+      <app-danger-card *ngIf="entityModel && entityModel.ResultCode === -1" [model]="entityModel" (buttonIsPressed)="buttonIsPressed($event)"></app-danger-card>
+      <app-success-card *ngIf="entityModel && entityModel.EntityId" [model]="entityModel" (buttonIsPressed)="buttonIsPressed($event)"></app-success-card>  
+    </div>
+  </div>
+</div>

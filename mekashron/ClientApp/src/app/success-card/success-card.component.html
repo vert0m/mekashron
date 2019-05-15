@@ -1,0 +1,12 @@
+<div class="card border-success mb-3" style="max-width: 20rem;">
+  <div class="card-header bg-transparent border-success">Success!</div>
+  <div class="card-body text-success">
+    <h5 class="card-title">Entity details</h5>
+    <ul>
+      <li *ngFor="let item of model | keyvalue">{{item.key}} : {{item.value}}</li>
+    </ul>
+  </div>
+  <div class="card-footer bg-transparent border-success">
+    <button type="button" class="btn btn-outline-success" (click)="goBack()">Back</button>
+  </div>
+</div>
