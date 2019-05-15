@@ -6,14 +6,14 @@
           <label for="username">Username:</label>
           <input type="text" class="form-control" id="username" placeholder="Username" name="username" [(ngModel)]="model.username" required>
           <div class="validation invalid-username" *ngIf="!isValidUsername">
-            Username can not be empty!
+            Username cannot be empty!
           </div>
         </div>
         <div class="form-group">
           <label for="password">Password:</label>
           <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="model.password" required>
           <div class="validation invalid-password" *ngIf="!isValidPassword">
-            Password can not be empty!
+            Password cannot be empty!
           </div>
         </div>
         <div class="button-wrapper">
