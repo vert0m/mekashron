@@ -26,3 +26,7 @@ form {
     outline: 0;
     box-shadow: 0 0 0 0.2rem #343a40;
 }
+
+.validation {
+    color: rgb(218, 70, 70);
+}

@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
 
   isSuccessful = null;
 
+  isValidUsername = true;
+  isValidPassword = true;
+
   constructor(private authService: AuthService) {
     this.model = new LoginModel('', '');
   }
@@ -21,9 +24,26 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.authService.login(this.model).subscribe(response => {
-      this.entityModel = response;
-    });
+    if (this.model.password === '' || this.model.password === null) {
+      this.isValidPassword = false;
+    } else {
+      this.isValidPassword = true;
+    }
+
+    if (this.model.username === '' || this.model.username === null) {
+      this.isValidUsername = false;
+    } else {
+      this.isValidUsername = true;
+    }
+
+    if (this.isValidPassword === true &&
+      this.isValidUsername === true) {
+        this.authService.login(this.model).subscribe(response => {
+          this.entityModel = response;
+        });
+    } else {
+     return;
+    }
   }
 
   buttonIsPressed(isPressed: any) {
